@@ -5,6 +5,10 @@ html, body {
     width: 100%;
 }
 
+body {
+    font-family: 'lato';
+}
+
 header {
     background: black;
     height: 40px;
@@ -22,6 +26,7 @@ header a {
 }
 
 .app-content {
+    box-sizing: border-box;
     position: absolute;
     padding: 15px;
     top: 40px;
@@ -77,4 +82,62 @@ footer p {
 
 .gong-container + .app-container {
     filter: blur(10px);
+}
+
+.top-row {
+    text-align: center;
+}
+
+.stats-block {
+    display: inline-block;
+    width: 45%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px 3px 10px #EEE;
+}
+
+.stats-block:not(:last-child) {
+    margin-right: 3%;
+}
+
+.recent-sales {
+    text-align: left;
+    padding: 15px 20px;
+}
+
+.panel-header {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.recent-sales-table {
+    width: 100%;
+    table-layout: auto;
+    border-spacing: 0;
+}
+
+.recent-sales-table thead tr {
+    height: 25px;
+}
+
+.recent-sales-table thead tr th {
+    font-size: 13px;
+    color: #c1c0c0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.recent-sales-table tbody tr {
+    height: 40px;
+}
+
+.recent-sales-table tbody tr td {
+    border-top: 1px solid #dedede;
+    font-size: 13px;
+}
+
+.recent-sales-table tbody tr td.company-name {
+    font-size: 15px;
+    font-weight: 600;
 }

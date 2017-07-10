@@ -1,10 +1,19 @@
 import React from 'react';
 
-export default class IndexPage extends React.Component {
+import RecentSales from './recent-sales';
+
+export default class Dashboard extends React.Component {
     render() {
         return (
             <div className="home">
-                This is a dashboard
+                <div className="top-row">
+                    <div className="stats-block">
+                        <RecentSales />
+                    </div>
+                    <div className="stats-block">
+                        <RecentSales />
+                    </div>
+                </div>
             </div>
         );
     }
