@@ -28,7 +28,7 @@ socketIO.on('connection', socket => {
 });
 
 app.get('/shtuty', (req, res) => {
-    socketIO.emit('gong', { for: 'everyone' });
+    socketIO.emit('gong', { 'company': 'Google', 'amount': '100000' });
     res.json();
 });
 

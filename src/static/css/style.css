@@ -4,3 +4,77 @@ html, body {
     padding: 0;
     width: 100%;
 }
+
+header {
+    background: black;
+    height: 40px;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+header a {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-decoration: none;
+}
+
+.app-content {
+    position: absolute;
+    padding: 15px;
+    top: 40px;
+    bottom: 20px;
+    background: #f9f9f9;
+    width: 100%;
+    z-index: 5;
+}
+
+footer {
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    font-size: 10px;
+    vertical-align: text-bottom;
+    line-height: 20px;
+    text-align: center;
+    width: 100%;
+    background: #f7f7f7;
+}
+
+footer p {
+    margin: 0;
+}
+
+.gong-container {
+    background: rgba(255, 255, 255, 0.5);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.5s linear;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 10;
+}
+
+.gong-container.has-gong {
+    opacity: 1;
+}
+
+.gong-container .gong-text {
+    font-size: 254px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gong-container + .app-container {
+    filter: blur(10px);
+}
