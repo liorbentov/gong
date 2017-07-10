@@ -24,6 +24,7 @@ export default class Layout extends React.Component {
     }
 
     handleGong() {
+        console.log("Gong!");
         this.setState({ hasGong: true });
         const HIDE_TIMEOUT = 3000;
         if (this.gongTimeout) {

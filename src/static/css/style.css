@@ -94,13 +94,15 @@ footer p {
     background: white;
     border-radius: 5px;
     box-shadow: 2px 3px 10px #EEE;
+    min-height: 335px;
+    vertical-align: top;
 }
 
 .stats-block:not(:last-child) {
     margin-right: 3%;
 }
 
-.recent-sales {
+.recent-sales, .top-paying-customers {
     text-align: left;
     padding: 15px 20px;
 }
@@ -129,7 +131,7 @@ footer p {
 }
 
 .recent-sales-table tbody tr {
-    height: 40px;
+    height: 50px;
 }
 
 .recent-sales-table tbody tr td {
@@ -140,4 +142,33 @@ footer p {
 .recent-sales-table tbody tr td.company-name {
     font-size: 15px;
     font-weight: 600;
+}
+
+.image-cropper {
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    height: 35px;
+    margin-right: 10px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    width: 35px;
+}
+
+.company-logo {
+    display: inline;
+    height: 35px;
+    margin: 0 auto;
+    width: 35px;
+}
+
+.sale-date-label {
+    background: #f17e2d;
+    padding: 5px 10px;
+    border-radius: 13px;
+    color: white;
 }

@@ -1,4 +1,19 @@
 import React from 'react';
+import moment from 'moment';
+
+import recentSales from '../data/new-deals';
+
+const DateCell = date => {
+    debugger;
+    const momentDate = moment.unix(date);
+    const current = moment();
+
+    if (current.diff(momentDate, 'months', true) >= 1) {
+        return momentDate.format('DD/MM/YYYY');
+    }
+
+    return <span className="sale-date-label">{ momentDate.fromNow() }</span>;
+};
 
 export default class RecentSales extends React.Component {
     render() {
@@ -11,40 +26,29 @@ export default class RecentSales extends React.Component {
                             <th>Company Name</th>
                             <th>Plan Type</th>
                             <th>A/M</th>
-                            <th>Country</th>
+                            <th>Date</th>
+                            <th>Rank</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="company-name">Netflix</td>
-                            <td>Pro Plan</td>
-                            <td>Annual</td>
-                            <td>USA</td>
-                        </tr>
-                        <tr>
-                            <td className="company-name">Netflix</td>
-                            <td>Pro Plan</td>
-                            <td>Annual</td>
-                            <td>USA</td>
-                        </tr>
-                        <tr>
-                            <td className="company-name">Netflix</td>
-                            <td>Pro Plan</td>
-                            <td>Annual</td>
-                            <td>USA</td>
-                        </tr>
-                        <tr>
-                            <td className="company-name">Netflix</td>
-                            <td>Pro Plan</td>
-                            <td>Annual</td>
-                            <td>USA</td>
-                        </tr>
-                        <tr>
-                            <td className="company-name">Netflix</td>
-                            <td>Pro Plan</td>
-                            <td>Annual</td>
-                            <td>USA</td>
-                        </tr>
+                        { recentSales.map((sale, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td className="company-name">
+                                        <div className="image-cropper">
+                                            <img className="company-logo" src={sale.logo} />
+                                        </div>
+                                        { sale.name }
+                                    </td>
+                                    <td className="sale-plan">{sale.plan}</td>
+                                    <td className="sale-type">{sale.type}</td>
+                                    <td className="sale-date">
+                                        { DateCell(sale.date) }
+                                    </td>
+                                    <td className="sale-rank">{sale.rank}</td>
+                                </tr>
+                            );
+                        }) }
                     </tbody>
                 </table>
             </div>
