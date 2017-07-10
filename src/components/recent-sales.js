@@ -19,7 +19,6 @@ export default class RecentSales extends React.Component {
     render() {
         return (
             <div className="recent-sales">
-                <div className="panel-header">new deals high touch </div>
                 <table className="recent-sales-table">
                     <thead>
                         <tr>
@@ -34,12 +33,7 @@ export default class RecentSales extends React.Component {
                         { recentSales.map((sale, index) => {
                             return (
                                 <tr key={index}>
-                                    <td className="company-name">
-                                        <div className="image-cropper">
-                                            <img className="company-logo" src={sale.logo} />
-                                        </div>
-                                        { sale.name }
-                                    </td>
+                                    <td className="company-name">{ sale.name }</td>
                                     <td className="sale-plan">{sale.plan}</td>
                                     <td className="sale-type">{sale.type}</td>
                                     <td className="sale-date">

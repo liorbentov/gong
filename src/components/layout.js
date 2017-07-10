@@ -53,11 +53,6 @@ export default class Layout extends React.Component {
                     <div className="gong-text">Gong!</div>
                 </div>
                 <div className="app-content">{this.props.children}</div>
-                <footer>
-                    <p>
-                        Great work done by Hai Ohayun, Eliran Shani and Lior Shub
-                    </p>
-                </footer>
             </div>
         );
     }

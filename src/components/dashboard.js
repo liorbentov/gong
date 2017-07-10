@@ -9,10 +9,22 @@ export default class Dashboard extends React.Component {
             <div className="home">
                 <div className="top-row">
                     <div className="stats-block">
-                        <RecentSales />
+                        <div className="panel-header">Latest enterprise deals</div>
+                        <TopPayingCustomers />
                     </div>
                     <div className="stats-block">
+                        <div className="panel-header">Latest No Touch Deals </div>
+                        <RecentSales />
+                    </div>
+                </div>
+                <div className="bottom-row">
+                    <div className="stats-block">
+                        <div className="panel-header">Hottest Features</div>
                         <TopPayingCustomers />
+                    </div>
+                    <div className="stats-block">
+                        <div className="panel-header">Purchases - weekly (Last 15 days)</div>
+                        <RecentSales />
                     </div>
                 </div>
             </div>
