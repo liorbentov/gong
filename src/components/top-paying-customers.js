@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactBubbleChart from 'react-bubble-chart';
 
-var colorLegend = [
-    {color: "#da1725", textColor: "#ffffff"},
-    {color: "#1d1d1d", textColor: "#ffffff"},
-    {color: "#235cd6", textColor: "#ffffff" },
-    {color: "#13d883", textColor: "#ffffff" },
-];
-
 var tooltipProps = [{
     css: 'name',
     prop: '_id'
@@ -126,9 +119,9 @@ class BubbleChart extends React.Component {
                 <div className="chart" style={{height: 250, width: '100%' }}>
                     <ReactBubbleChart
                         className="my-cool-chart"
-                        colorLegend={colorLegend}
                         data={data}
                         fontSizeFactor={0.5}
+                        legend={false}
                         tooltip={true}
                         tooltipProps={tooltipProps}
                     />

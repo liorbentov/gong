@@ -192,3 +192,7 @@ g.highcharts-series.highcharts-column-series.highcharts-color-undefined.highchar
 .tooltip .name {
     font-weight: bold;
 }
+
+svg.bubble-legend {
+    display: none;
+}
