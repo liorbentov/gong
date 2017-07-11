@@ -39,7 +39,7 @@ export default class RecentSales extends React.Component {
                                     <td className="sale-date">
                                         { DateCell(sale.date) }
                                     </td>
-                                    <td className="sale-rank">{sale.rank}</td>
+                                    <td className="sale-amount">{sale.amount}$</td>
                                 </tr>
                             );
                         }) }

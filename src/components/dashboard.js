@@ -2,6 +2,7 @@ import React from 'react';
 
 import RecentSales from './recent-sales';
 import TopPayingCustomers from './top-paying-customers';
+import TopFeatures from './top-features';
 
 export default class Dashboard extends React.Component {
     render() {
@@ -20,7 +21,7 @@ export default class Dashboard extends React.Component {
                 <div className="bottom-row">
                     <div className="stats-block">
                         <div className="panel-header">Hottest Features</div>
-                        <TopPayingCustomers />
+                        <TopFeatures />
                     </div>
                     <div className="stats-block">
                         <div className="panel-header">Purchases - weekly (Last 15 days)</div>

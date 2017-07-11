@@ -2,12 +2,10 @@ import React from 'react';
 import ReactBubbleChart from 'react-bubble-chart';
 
 var colorLegend = [
-  //reds from dark to light
-  {color: "#67000d", text: 'Negative', textColor: "#ffffff"}, "#a50f15", "#cb181d", "#ef3b2c", "#fb6a4a", "#fc9272", "#fcbba1", "#fee0d2",
-  //neutral grey
-  {color: "#f0f0f0", text: 'Neutral'},
-  // blues from light to dark
-  "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#08519c", {color: "#08306b", text: 'Positive', textColor: "#ffffff"}
+    {color: "#da1725", textColor: "#ffffff"},
+    {color: "#1d1d1d", textColor: "#ffffff"},
+    {color: "#235cd6", textColor: "#ffffff" },
+    {color: "#13d883", textColor: "#ffffff" },
 ];
 
 var tooltipProps = [{
@@ -27,17 +25,17 @@ const data = [{
 }, {
     _id: "Uber",
     value: 200,
-    colorValue: 1,
+    colorValue: 2,
     selected: false
 }, {
     _id: "Chase",
     value: 190,
-    colorValue: 1,
+    colorValue: 3,
     selected: false
 }, {
     _id: "Starbucks",
     value: 180,
-    colorValue: 1,
+    colorValue: 4,
     selected: false
 }, {
     _id: "Apple",

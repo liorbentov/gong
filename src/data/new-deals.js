@@ -4,33 +4,38 @@ export default [{
     "plan": "Pro Plan",
     "type": "Annual",
     "date": "1499700080",
-    "rank": "3"
+    "rank": "3",
+    "amount": "149",
 }, {
     "name": "Uber",
     "logo": "http://logonoid.com/images/uber-logo.png",
     "plan": "Pro Plan",
     "type": "Annual",
     "date": "1467676800",
-    "rank": "2"
+    "rank": "2",
+    "amount": "99",
 }, {
     "name": "Chase",
     "logo": "http://diylogodesigns.com/blog/wp-content/uploads/2016/02/Chase-Mobile-app-logo-icon.png",
     "plan": "Pro Plan",
     "type": "Annual",
     "date": "1463443200",
-    "rank": "1"
+    "rank": "1",
+    "amount": "649",
 }, {
     "name": "Starbucks",
     "logo": "https://www.logogarden.com/wp-content/uploads/lg-index/Example-Logo-6.jpg",
     "plan": "Pro Plan",
     "type": "Annual",
     "date": "1458000000",
-    "rank": "2"
+    "rank": "2",
+    "amount": "499",
 }, {
     "name": "Apple",
     "logo": "https://www.logogarden.com/wp-content/uploads/lg-index/Example-Logo-6.jpg",
     "plan": "Pro Plan",
     "type": "Annual",
     "date": "1453248000",
-    "rank": "3"
+    "rank": "1",
+    "amount": "649",
 }]

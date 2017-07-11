@@ -46,11 +46,14 @@ export default class Layout extends React.Component {
             <div className="app-container">
                 <header>
                     <Link to="/">
-                        Gong
+                        <img src="/img/gong-logo.svg" />
                     </Link>
                 </header>
                 <div className={classes}>
-                    <div className="gong-text">Gong!</div>
+                    <div className="gong-text">
+                        <img src="/img/gong-man.png" />
+                        We closed a new deal!
+                    </div>
                 </div>
                 <div className="app-content">{this.props.children}</div>
             </div>
