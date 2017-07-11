@@ -36,8 +36,8 @@ app.get('/shtuty', (req, res) => {
 });
 
 app.post('/stripe', jsonParser, (req, res) => {
-    console.log(req.body);
-    socketIO.emit('stripe', { 'company': 'Google', 'amount': '100000' });
+    console.log(req.body.data.object);
+    socketIO.emit('stripe', req.body.data.object);
     res.sendStatus(204);
 });
 

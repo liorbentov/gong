@@ -2,9 +2,9 @@ import React from 'react';
 import moment from 'moment';
 
 import recentSales from '../data/new-deals';
+import { socket } from '../config';
 
 const DateCell = date => {
-    debugger;
     const momentDate = moment.unix(date);
     const current = moment();
 
@@ -16,21 +16,50 @@ const DateCell = date => {
 };
 
 export default class RecentSales extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { recentSales };
+    }
+
+
+    componentDidMount() {
+        this._isMounted = true;
+        socket.on('stripe', msg => {
+            this.handlePurchase(msg);
+        });
+    }
+
+    handlePurchase({ customer, plan }) {
+        const newPurchase = {
+            name: customer,
+            plan: plan.name,
+            type: plan.interval === "month" ? "Monthly" : "Annual",
+            date: moment().unix(),
+            amount: plan.amount
+        };
+
+        const { recentSales } = this.state;
+        const newSales = [newPurchase, ...recentSales.slice(0, 4)];
+
+        this.setState({ recentSales: newSales });
+    }
+
     render() {
         return (
             <div className="recent-sales">
                 <table className="recent-sales-table">
                     <thead>
                         <tr>
-                            <th>Company Name</th>
+                            <th>Name</th>
                             <th>Plan Type</th>
                             <th>A/M</th>
                             <th>Date</th>
-                            <th>Rank</th>
+                            <th>Amount</th>
                         </tr>
                     </thead>
                     <tbody>
-                        { recentSales.map((sale, index) => {
+                        { this.state.recentSales.map((sale, index) => {
                             return (
                                 <tr key={index}>
                                     <td className="company-name">{ sale.name }</td>

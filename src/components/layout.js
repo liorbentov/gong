@@ -14,7 +14,6 @@ export default class Layout extends React.Component {
     componentDidMount() {
         this._isMounted = true;
         socket.on('gong', msg => {
-            console.log(msg);
             this.handleGong();
         });
     }
@@ -24,7 +23,6 @@ export default class Layout extends React.Component {
     }
 
     handleGong() {
-        console.log("Gong!");
         this.setState({ hasGong: true });
         const HIDE_TIMEOUT = 3000;
         if (this.gongTimeout) {
