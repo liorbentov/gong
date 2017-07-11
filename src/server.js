@@ -28,6 +28,10 @@ socketIO.on('connection', socket => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
+
+    socket.on('newDeal', data => {
+        socketIO.emit('gong', data);
+    });
 });
 
 app.get('/shtuty', (req, res) => {

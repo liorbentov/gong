@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactBubbleChart from 'react-bubble-chart';
 
+import { socket } from '../config';
+
 var tooltipProps = [{
     css: 'name',
     prop: '_id'
@@ -109,8 +111,19 @@ const data = [{
 }];
 
 class BubbleChart extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { data }
+    }
+
     componentDidMount() {
-        this.chart
+        this._isMounted = true;
+        socket.on('gong', msg => {
+            const { data } = this.state;
+            const newData = [...data, msg];
+            this.setState({ data: newData });
+        });
     }
 
     render () {
@@ -119,7 +132,7 @@ class BubbleChart extends React.Component {
                 <div className="chart" style={{height: 250, width: '100%' }}>
                     <ReactBubbleChart
                         className="my-cool-chart"
-                        data={data}
+                        data={this.state.data}
                         fontSizeFactor={0.5}
                         legend={false}
                         tooltip={true}

@@ -196,3 +196,16 @@ g.highcharts-series.highcharts-column-series.highcharts-color-undefined.highchar
 svg.bubble-legend {
     display: none;
 }
+
+.form-group label {
+    width: 200px;
+    display: inline-block;
+    line-height: 2.3;
+}
+
+.form-group input {
+        height: 25px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    text-indent: 5px;
+}
