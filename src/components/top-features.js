@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactBubbleChart from 'react-bubble-chart';
 
-var colorLegend = [
-    {color: "#da1725", textColor: "#ffffff"},
-    {color: "#1d1d1d", textColor: "#ffffff"},
-    {color: "#235cd6", textColor: "#ffffff" },
-    {color: "#13d883", textColor: "#ffffff" },
-];
-
 var tooltipProps = [{
     css: 'value',
     prop: 'value'
@@ -18,45 +11,41 @@ var tooltipProps = [{
 }];
 
 const data = [{
-    _id: "Netflix",
+    _id: "Taurus",
     value: 250,
-    colorValue: 1,
-    selected: false
+    color: '#5836b8',
+    selected: false,
+    invert: true,
 }, {
-    _id: "Uber",
+    _id: "Fail Criteria",
     value: 200,
-    colorValue: 2,
-    selected: false
+    color: '#e7306f',
+    selected: false,
+    invert: true,
 }, {
-    _id: "Chase",
+    _id: "on-Prem",
     value: 190,
-    colorValue: 3,
-    selected: false
+    color: '#81c42e',
+    selected: false,
+    invert: true,
 }, {
-    _id: "Starbucks",
+    _id: "Multi Test",
     value: 180,
-    colorValue: 4,
-    selected: false
+    color: '#fdbb30',
+    selected: false,
+    invert: true,
 }, {
-    _id: "Apple",
+    _id: "Apm",
     value: 120,
-    colorValue: 1,
-    selected: false
+    color: '#29a4ff',
+    selected: false,
+    invert: true,
 }, {
-    _id: "Wolksvagen",
+    _id: "PCE",
     value: 110,
-    colorValue: 1,
-    selected: false
-}, {
-    _id: "Nike",
-    value: 100,
-    colorValue: 1,
-    selected: false
-}, {
-    _id: "PS",
-    value: 80,
-    colorValue: 2,
-    selected: false
+    color: '#ce222c',
+    selected: false,
+    invert: true,
 }];
 
 class BubbleChart extends React.Component {
@@ -69,8 +58,7 @@ class BubbleChart extends React.Component {
             <div className="top-paying-customers">
                 <div className="chart" style={{height: 250, width: '100%' }}>
                     <ReactBubbleChart
-                        className="my-cool-chart"
-                        colorLegend={colorLegend}
+                        className="hottest-features-chart"
                         invert={true}
                         data={data}
                         fontSizeFactor={0.5}
