@@ -24,6 +24,7 @@ export default class Layout extends React.Component {
 
     handleGong() {
         this.setState({ hasGong: true });
+        this.getConfetti();
         const HIDE_TIMEOUT = 3000;
         if (this.gongTimeout) {
             window.clearTimeout(this.gongTimeout);
@@ -38,6 +39,18 @@ export default class Layout extends React.Component {
         this.setState({ hasGong: false });
     }
 
+    getConfetti() {
+        var flakes = '',
+            randomColor;
+        for(var i = 0, len = 400; i < len; i++) {
+            randomColor = Math.floor(Math.random()*16777215).toString(16);
+            flakes += '<div class="ball" style="background: #'+randomColor;
+            flakes += '; animation-duration: '+(Math.random() * 9 + 2)+'s; animation-delay: ';
+            flakes += (Math.random() * 2 + 0)+'s;"></div>';
+        }
+        document.getElementById('confetti').innerHTML = flakes;
+    }
+
     render() {
         const classes = this.state.hasGong ? "gong-container has-gong" : "gong-container";
         return (
@@ -48,6 +61,7 @@ export default class Layout extends React.Component {
                     </Link>
                 </header>
                 <div className={classes}>
+                    <div id="confetti" />
                     <div className="gong-text">
                         <img src="/img/gong-man.png" />
                         We closed a new deal!
