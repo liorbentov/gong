@@ -170,3 +170,12 @@ header a {
     width: 100%;
     height: 100%;
 }
+
+g.highcharts-series.highcharts-column-series.highcharts-color-undefined.highcharts-tracker > .highcharts-point {
+    fill-opacity: 0.3;
+}
+
+.highcharts-point:hover {
+    fill-opacity: 1 !important;
+}
+

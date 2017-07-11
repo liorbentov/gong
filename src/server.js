@@ -7,6 +7,7 @@ import { match, RouterContext } from 'react-router';
 import routes from './routes';
 import NotFoundPage from './components/not-found-page';
 import io from 'socket.io';
+import bodyParser from 'body-parser';
 
 // initialize the server and configure support for ejs templates
 const app = new Express();
@@ -16,6 +17,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
+
+const jsonParser = bodyParser.json();
 
 // define socketIo
 const socketIO = io(server);
@@ -30,6 +33,12 @@ socketIO.on('connection', socket => {
 app.get('/shtuty', (req, res) => {
     socketIO.emit('gong', { 'company': 'Google', 'amount': '100000' });
     res.json();
+});
+
+app.post('/stripe', jsonParser, (req, res) => {
+    console.log(req.body);
+    socketIO.emit('stripe', { 'company': 'Google', 'amount': '100000' });
+    res.sendStatus(204);
 });
 
 // universal routing and rendering

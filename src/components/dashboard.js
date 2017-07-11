@@ -3,6 +3,7 @@ import React from 'react';
 import RecentSales from './recent-sales';
 import TopPayingCustomers from './top-paying-customers';
 import TopFeatures from './top-features';
+import Purchases from './purchases';
 
 export default class Dashboard extends React.Component {
     render() {
@@ -25,7 +26,7 @@ export default class Dashboard extends React.Component {
                     </div>
                     <div className="stats-block">
                         <div className="panel-header">Purchases - weekly (Last 15 days)</div>
-                        <RecentSales />
+                        <Purchases />
                     </div>
                 </div>
             </div>
