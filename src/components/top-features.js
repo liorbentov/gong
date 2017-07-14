@@ -62,8 +62,6 @@ class BubbleChart extends React.Component {
                         invert={true}
                         data={data}
                         fontSizeFactor={0.5}
-                        tooltip={true}
-                        tooltipProps={tooltipProps}
                     />
                 </div>
             </div>

@@ -20,7 +20,6 @@ header {
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
-    width: 100%;
 }
 
 header a {
@@ -29,6 +28,11 @@ header a {
     font-weight: 800;
     letter-spacing: 1.3px;
     text-decoration: none;
+}
+
+header img {
+    width: 99px;
+    height: 26px;
 }
 
 .app-content {

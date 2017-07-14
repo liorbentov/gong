@@ -57,7 +57,7 @@ export default class Layout extends React.Component {
             <div className="app-container">
                 <header>
                     <Link to="/">
-                        <img src="/img/gong-logo.svg" />
+                        <img src="/img/gong-logo2.png" />
                     </Link>
                 </header>
                 <div className={classes}>
